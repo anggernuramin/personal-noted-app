@@ -7,6 +7,10 @@ import { Header } from "./components/Header";
 import { FormAddNoted } from "./components/FormAddNoted";
 import { SearchNoted } from "./components/SearchNoted";
 import { CardNoted } from "./components/CardNoted";
+import { CatatanAktif } from "./components/CatatanAktif";
+import { CatatanArsip } from "./components/CatatanArsip";
+CatatanAktif;
+CatatanArsip;
 const App = () => {
   const [datas, setDatas] = useState([]);
   const [searchCatatan, setSearchCatatan] = useState("");
@@ -66,38 +70,9 @@ const App = () => {
         <SearchNoted handleSearch={handleSearch} />
         <div className="wrapper-main-content">
           <div className="wrapper-Catatan-shelf">
-            <h2>Catatan aktif</h2>
-            <section className="Catatan-shelf">
-              {searchResult.length > 0
-                ? searchResult.map((item) => {
-                    if (item.archived === false) {
-                      return <CardNoted key={item.id} data={item} deleteCatatan={deleteCatatan} arsipCatatan={arsipCatatan} kembalikanCatatan={kembalikanCatatan} />;
-                    }
-                  })
-                : datas.map((item) => {
-                    if (item.archived === false) {
-                      return <CardNoted key={item.id} data={item} deleteCatatan={deleteCatatan} arsipCatatan={arsipCatatan} kembalikanCatatan={kembalikanCatatan} />;
-                    }
-                  })}
+            <CatatanAktif datas={datas} searchResult={searchResult} arsipCatatan={arsipCatatan} deleteCatatan={deleteCatatan} />
 
-              {datas.every((item) => item.archived) && <p>Tidak ada catatan</p>}
-            </section>
-
-            <h2>Diarsipkan</h2>
-            <section className="Catatan-shelf">
-              {searchResult.length > 0
-                ? searchResult.map((item) => {
-                    if (item.archived) {
-                      return <CardNoted key={item.id} data={item} deleteCatatan={deleteCatatan} arsipCatatan={arsipCatatan} kembalikanCatatan={kembalikanCatatan} />;
-                    }
-                  })
-                : datas.map((item) => {
-                    if (item.archived) {
-                      return <CardNoted key={item.id} data={item} deleteCatatan={deleteCatatan} arsipCatatan={arsipCatatan} kembalikanCatatan={kembalikanCatatan} />;
-                    }
-                  })}
-              {datas.every((item) => item.archived === false) && <p>Tidak ada catatan yang Diarsipkan</p>}
-            </section>
+            <CatatanArsip datas={datas} searchResult={searchResult} kembalikanCatatan={kembalikanCatatan} deleteCatatan={deleteCatatan} />
           </div>
         </div>
       </main>
