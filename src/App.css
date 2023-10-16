@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  font-size: 15px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+button {
+  cursor: pointer;
+  color: white;
+  border: 2px solid transparent;
+  background-color: var(--btn-color);
+}
+input:focus {
+  outline: none;
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  --primary-color: #c9dcee;
+  --secondary-color: #eaf0f6;
+  --third-color: #adc5dc;
+  --btn-color: rgba(94, 23, 220, 1);
+  --btn-color-active: #c8d6e4;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #fffffe;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* header start */
+header .container {
+  height: 220px;
+}
+.wrapper-head-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper-head-bar::after {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: -8%;
+  width: 150px;
+  height: 150px;
+  background-color: var(--third-color);
+  border-radius: 50%;
+}
+.wrapper-head-bar::before {
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  right: -9%;
+  width: 150px;
+  height: 150px;
+  background-color: var(--third-color);
+  border-radius: 50%;
+}
+
+.head-bar-image {
+  width: 30%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head-bar-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 40px;
+}
+.head-bar-content {
+  width: 50%;
+}
+.head-bar-content h1 {
+  letter-spacing: 1px;
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+.head-bar-content p {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+.watermark {
+  position: absolute;
+  bottom: 15px;
+  right: 80px;
+  font-weight: bold;
+}
+/* header end */
+
+/* search section start */
+.search-section {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-block: 15px;
+  width: 100%;
+}
+
+#searchSubmit,
+#CatatanSubmit {
+  transition: all 0.3s;
+  background-color: var(--btn-color);
+}
+#searchSubmit:hover,
+#CatatanSubmit:hover {
+  background-color: rgba(94, 23, 220, 0.9);
+}
+#searchCatatanTitle {
+  margin-inline: 10px;
+}
+#CatatanSubmit {
+  width: 100%;
+}
+/* search section end */
+
+/* add catatan start */
+#inputCatatan .input,
+.input-inline {
+  margin-bottom: 8px;
+}
+#inputCatatan label {
+  font-size: 18px;
+}
+
+.input input {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.wrapper-input-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-section {
+  padding: 0px 20px 20px 0;
+  width: 40%;
+}
+.input-section h2 {
+  margin-top: 10px;
+}
+.input .label-judul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input-section .input {
+  display: flex;
+  flex-direction: column;
+}
+.input-section .input textarea {
+  margin-top: 3px;
+  padding: 10px;
+  font-size: 16px;
+  height: 150px;
+  overflow-y: auto;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+/* end form add catatan */
+
+/* show catatan start */
+.wrapper-main-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+
+.wrapper-Catatan-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 10px 50px 20px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  position: relative;
+}
+.Catatan-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.Catatan-shelf h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.Catatan-shelf .card-catatan {
+  background-color: white;
+  gap: 5px;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 260px;
+  height: 320px;
+  overflow: auto;
+  padding: 10px;
+  position: relative;
+  transition: all 0.2s;
+}
+.Catatan-shelf .card-catatan:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.card-catatan h3 {
+  width: 100%;
+  overflow: hidden;
+  height: 30px;
+  font-size: 20px;
+}
+.card-catatan p {
+  word-wrap: break-word;
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+}
+.card-catatan span {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+.action-catatan .delete {
+  margin-right: 15px;
+  transition: all 0.3s;
+  background-color: #d81a1a;
+}
+.action-catatan .delete:hover {
+  background-color: #f03529;
+}
+
+.action-catatan {
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
+  right: 0;
+}
+.removeAllCatatans {
+  position: absolute;
+  left: 5px;
+  bottom: 20px;
+  width: 190px !important;
+}
+
+.Catatan-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.Catatan-item h3 {
+  word-wrap: break-word;
+  font-weight: 600;
+}
+.Catatan-item p {
+  word-wrap: break-word;
+}
+
+.Catatan-list .action {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+.Catatan-list .action button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.Catatan-list .action .green,
+.red {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Catatan-list article {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--btn-color-active);
+  margin-bottom: 10px;
+}
+
+.input-section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+/* show catatan end */
+
+@media (min-width: 768px) and (max-width: 829px) {
+  #searchCatatan input {
+    width: 55%;
+  }
+  #searchCatatan button {
+    width: 32%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Gaya CSS yang akan diterapkan pada ponsel */
+  body {
+    font-size: 14px;
+  }
+  input,
+  button {
+    font-size: 12px;
+  }
+  .container {
+    width: 90%;
+  }
+  header .container {
+    height: 300px;
+  }
+  .wrapper-head-bar {
+    gap: 35px;
+  }
+  .wrapper-head-bar::after {
+    top: -15%;
+    left: -30%;
+    width: 150px;
+    height: 150px;
+  }
+  .wrapper-head-bar::before {
+    bottom: -15%;
+    right: -25%;
+    width: 150px;
+    height: 150px;
+  }
+  .head-bar-content p {
+    font-size: 12px;
+  }
+  .head-bar-image {
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .head-bar-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 40px;
+  }
+  .head-bar-content {
+    width: 50%;
+  }
+  .wrapper-main-content {
+    flex-direction: column;
+  }
+  .input-section {
+    padding: 0;
+    width: 100%;
+  }
+  .wrapper-Catatan-shelf {
+    width: 100%;
+  }
+  .search-section {
+    margin-block: 20px;
+  }
+  #searchCatatan input {
+    width: 50%;
+  }
+  #searchCatatan button {
+    width: 30%;
+  }
+  .wrapper-Catatan-shelf {
+    flex-direction: column;
+  }
+  .wrapper-Catatan-shelf .book-shelf {
+    width: 100%;
+  }
+  .book-shelf h2 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .confirm-delete,
+  .wrapper-confirm-delete-all {
+    width: 330px;
+    height: 205px;
+  }
+}
