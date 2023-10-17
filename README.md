@@ -4,8 +4,8 @@ Submission Dicoding course - kelas Belajar Membuat Aplikasi Web dengan React - M
 ## Build Setup
 
 ```bash
-# clone repository https://github.com/anggernuramin/personal-noted-app.git
-git clone
+# clone repository 
+git clone https://github.com/anggernuramin/personal-noted-app.git
 
 # masuk folder personal-noted-app
 cd personal-noted-app
