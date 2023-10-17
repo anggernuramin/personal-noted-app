@@ -13,11 +13,11 @@ export const FormAddNoted = ({ addCatatan }) => {
 
   function handleInput(e) {
     const value = e.target.value;
-
-    if (value.length < 50) {
+    const maxLengthInput = 50;
+    if (value.length < maxLengthInput) {
       setTitle(value);
     }
-    setErrorInput(`Sisa karakter: ${50 - value.length}`);
+    setErrorInput(`Sisa karakter: ${maxLengthInput - value.length}`);
   }
   function handleFormSubmit(e) {
     e.preventDefault();
